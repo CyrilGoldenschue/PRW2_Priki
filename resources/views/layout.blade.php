@@ -11,15 +11,13 @@
 
     <!-- Styles -->
 
-
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/changeDays.js') }}" defer></script>
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 
 </head>
 <body class="antialiased">
-
-<h1>hello</h1>
-<?= dirname(__DIR__,3) ?>/public/css/app.css"
 
 @yield('content')
 
