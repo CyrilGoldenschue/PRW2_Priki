@@ -20,7 +20,7 @@
                     {{ $practice->domain->name }}
                 </td>
                 <td>
-                    {{ $practice->updated_at->isoformat('d MMMM Y', 'Europe') }}
+                    {{ \Carbon\Carbon::parse($practice->updated_at)->formatLocalized('%d %B %Y') }}
                 </td>
             </tr>
         @endforeach
