@@ -1,15 +1,19 @@
-var element = document.getElementById("Days");
+var input = document.getElementById("Days");
 var practices = document.getElementsByClassName("Practice")
-const date = new Date();
+var table = document.getElementById("tablePractice")
 
 
-element.addEventListener("change", changeDays)
-window.onload = changeDays();
+table.addEventListener("load", changeDays)
+input.addEventListener("change", changeDays)
+
+
 function changeDays(){
+    const date = new Date();
+    newDate = new Date(date.setDate(date.getDate() - input.value))
     for (i = 0; i < practices.length; i++) {
         let datePractice = new Date(practices[i].dataset.date);
 
-        if ((date.getDate() - element.value) < datePractice.getDate()) {
+        if (newDate.getDate() < datePractice.getDate()) {
             practices[i].style.display = "table-row";
             document.getElementById("tablePractice").style.display = "table";
             document.getElementById("noPractice").style.display = "none";
