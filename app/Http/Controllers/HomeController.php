@@ -12,7 +12,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        Carbon::setLocale("fr");
+        setLocale(LC_TIME, 'French');
         $publicationState = PublicationState::where('slug', "PUB")->first();
         return view('welcome')->with(["nbDays" => 5, "publicationState" => $publicationState]);
     }
