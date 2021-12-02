@@ -20,4 +20,6 @@ class Domain extends Model
     {
         return $this->hasMany(Practice::class);
     }
+
+
 }

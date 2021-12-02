@@ -8093,7 +8093,8 @@ body {
 }
 
 h1 {
-  color: red;
+  color: black;
+  font-weight: bold;
 }
 
 .Practice {
