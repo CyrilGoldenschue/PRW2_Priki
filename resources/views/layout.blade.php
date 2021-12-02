@@ -13,10 +13,13 @@
 
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ mix('js/changeDays.js') }}" defer></script>
+    <script src="{{ mix('js/changeDomain.js') }}" defer></script>
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ 'bootstrap/css/bootstrap.css' }}">
 
 </head>
+@include('header')
 <body class="antialiased">
 
 @yield('content')
