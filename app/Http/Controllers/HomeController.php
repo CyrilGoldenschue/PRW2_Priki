@@ -14,7 +14,7 @@ class HomeController extends Controller
     {
         setLocale(LC_TIME, 'French');
         $publicationState = PublicationState::where('slug', "PUB")->first();
-        return view('welcome')->with(["nbDays" => 5, "publicationState" => $publicationState]);
+        return view('practice')->with(["nbDays" => 5, "publicationState" => $publicationState]);
     }
 
 }
