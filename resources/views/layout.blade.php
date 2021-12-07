@@ -16,6 +16,7 @@
     <script src="{{ mix('js/changeDomain.js') }}" defer></script>
 
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/style.css') }}">
     <link rel="stylesheet" href="{{ 'bootstrap/css/bootstrap.css' }}">
 
 </head>
@@ -24,7 +25,7 @@
     <x-dropdown align="right" width="48">
         <x-slot name="trigger">
             <button class="flex items-center text-sm font-medium text-gray-500 hover:text-gray-700 hover:border-gray-300 focus:outline-none focus:text-gray-700 focus:border-gray-300 transition duration-150 ease-in-out">
-                <div>{{ Auth::user()->fullname }}</div>
+                <div>{{ Auth::user()->fullname }} {{ Auth::user()->name }}</div>
 
                 <div class="ml-1">
                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -49,7 +50,7 @@
     </x-dropdown>
 </div>
 @else
-    <a href="/practices">Login</a>
+    <a href="/practices">Login</a> <a href="/register">Register</a>
 
 @endif
 

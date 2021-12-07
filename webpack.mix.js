@@ -15,7 +15,7 @@ mix.js('resources/js/app.js', 'public/js')
     .js('resources/js/changeDays.js', 'public/js')
     .js('resources/js/changeDomain.js', 'public/js')
     .copyDirectory('node_modules/bootstrap/dist', 'public/bootstrap')
-    .sass('resources/scss/app.scss', 'public/css')
+    .sass('resources/scss/style.scss', 'public/css')
     .postCss('resources/css/app.css', 'public/css', [
         require('postcss-import'),
         require('tailwindcss'),
