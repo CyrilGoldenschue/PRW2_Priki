@@ -12,15 +12,10 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use \App\Http\Controllers\HomeController;
-
+use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/role', function () {
-    return view('role');
-});
+Route::get('/practices', [HomeController::class, 'index'])->middleware(['auth'])->name('practices');
 
-Route::get('/domain', function () {
-    return view('domain');
-});
+require __DIR__.'/auth.php';

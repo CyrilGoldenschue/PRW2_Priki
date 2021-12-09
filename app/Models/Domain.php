@@ -20,4 +20,11 @@ class Domain extends Model
     {
         return $this->hasMany(Practice::class);
     }
+
+    public function published_practices(){
+        return $this->practices()->whereHas('publication_state', function ($q){
+            $q->where("slug", "PUB");
+        });
+    }
+
 }

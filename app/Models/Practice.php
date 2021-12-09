@@ -31,4 +31,5 @@ class Practice extends Model
     {
         return $this->belongsTo(PublicationState::class);
     }
+
 }
