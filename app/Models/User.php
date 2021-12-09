@@ -13,7 +13,7 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
     protected $attributes = [
-        'role_id' => 1
+        'role_id' => 1,
     ];
 
     /**
@@ -25,6 +25,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'fullname',
     ];
 
     /**
