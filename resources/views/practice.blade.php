@@ -7,7 +7,7 @@
     <table id="tablePractice" class="table">
         <tr>
             <th>Description</th>
-            <th>Domaine</th>
+            <th class="Domain">Domaine</th>
             <th>Modifié le</th>
         </tr>
         <a id="noPractice">Aucune pratique à afficher ici</a>
@@ -16,7 +16,7 @@
                 <td>
                     {{ $practice->description }}
                 </td>
-                <td>
+                <td class="Domain">
                     {{ $practice->domain->name }}
                 </td>
                 <td>

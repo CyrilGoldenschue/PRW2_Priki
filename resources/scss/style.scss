@@ -4,9 +4,23 @@
 
 body {
     font-family: 'Nunito', sans-serif;
-    margin: 5px;
+    margin: 15px;
 }
 
+.basic_header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#connexion {
+    justify-content: right;
+    text-align: right;
+}
+
+.buttonLink{
+    margin-right: 20px;
+}
 
 h1{
     color: black;
