@@ -14,8 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 use App\Http\Controllers\HomeController;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name("homePage");
+Route::get('/practice/{id}', [HomeController::class, 'practice']);
+
+
 
 Route::get('/practices', [HomeController::class, 'index'])->middleware(['auth'])->name('practices');
+
 
 require __DIR__.'/auth.php';
