@@ -11319,3 +11319,36 @@ h1, .h1 {
   color: red;
   text-decoration: none;
 }
+
+.domain_autor {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.domain_autor > a {
+  margin-right: 15px;
+  margin-left: 15px;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.date > a {
+  margin-top: 5px;
+}
+
+.description {
+  margin-top: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  text-decoration: none;
+}

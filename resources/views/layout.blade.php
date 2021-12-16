@@ -22,7 +22,7 @@
 <body class="antialiased">
 
 <div class="basic_header">
-    <h1>Priki</h1>
+    <a href="/" class="logo"></s><h1>Priki</h1></a>
     <div id="connexion" class="hidden sm:flex sm:items-center sm:ml-6">
     @if(Auth::check())
 

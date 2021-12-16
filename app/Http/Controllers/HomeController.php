@@ -12,9 +12,18 @@ class HomeController extends Controller
 
     public function index()
     {
-        setLocale(LC_TIME, 'French');
+        Carbon::setLocale(config('app.locale'));
         $publicationState = PublicationState::where('slug', "PUB")->first();
         return view('practice')->with(["nbDays" => 5, "publicationState" => $publicationState]);
     }
 
+    public function practice($id){
+        Carbon::setLocale(config('app.locale'));
+        $practice = Practice::where('id', $id)->first();
+        if($practice->publication_state->slug == "PUB") {
+            return view('practiceDetail')->with(["practice" => $practice]);
+        }else {
+            return redirect("/");
+        }
+    }
 }
