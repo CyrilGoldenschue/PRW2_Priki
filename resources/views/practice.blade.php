@@ -12,17 +12,19 @@
         </tr>
         <a id="noPractice">Aucune pratique à afficher ici</a>
         @foreach($publicationState->practices as $practice)
-            <tr class="Practice" data-date="{{$practice->updated_at}}"  data-domain="{{ $practice->domain->name }}">
-                <td>
-                    {{ $practice->description }}
-                </td>
-                <td class="Domain">
-                    {{ $practice->domain->name }}
-                </td>
-                <td>
-                    {{ \Carbon\Carbon::parse($practice->updated_at)->formatLocalized('%d %B %Y') }}
-                </td>
-            </tr>
+
+                <tr onclick="document.location = '/practice/{{$practice->id}}'" class="Practice" data-date="{{$practice->updated_at}}" data-domain="{{ $practice->domain->name }}">
+                    <td>
+                        {{ $practice->description }}
+                    </td>
+                    <td class="Domain">
+                        {{ $practice->domain->name }}
+                    </td>
+                    <td>
+                       {{\Carbon\Carbon::parse($practice->updated_at)->translatedFormat('d F Y')}}
+                    </td>
+                </tr>
+
         @endforeach
 
     </table>
