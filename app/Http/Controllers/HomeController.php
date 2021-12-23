@@ -19,7 +19,7 @@ class HomeController extends Controller
 
     public function practice($id){
         Carbon::setLocale(config('app.locale'));
-        $practice = Practice::where('id', $id)->first();
+        $practice = Practice::find($id);
         if($practice->publication_state->slug == "PUB") {
             return view('practiceDetail')->with(["practice" => $practice]);
         }else {
