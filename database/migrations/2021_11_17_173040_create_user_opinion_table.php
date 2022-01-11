@@ -13,7 +13,7 @@ class CreateUserOpinionTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_opinion', function (Blueprint $table) {
+        Schema::create('opinion_user', function (Blueprint $table) {
             $table->integer('id', true);
             $table->integer('user_id')->index('fk_users_has_opinions_user_idx');
             $table->integer('opinion_id')->index('fk_users_has_opinions_opinions1_idx');
@@ -29,6 +29,6 @@ class CreateUserOpinionTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_opinion');
+        Schema::dropIfExists('opinion_user');
     }
 }
