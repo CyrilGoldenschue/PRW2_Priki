@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('content')
-
+    @include('header')
     <h2>Pratiques</h2>
     <p>Mises à jour dans les <input type="number" id="Days" name="days" value="{{$nbDays}}" min="0" max="365"> jours</p>
     <table id="tablePractice" class="table">

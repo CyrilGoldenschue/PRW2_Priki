@@ -25,7 +25,9 @@
 <body class="antialiased">
 
 <div class="basic_header">
-    <a href="/" class="logo"></s><h1>Priki</h1></a>
+    <div id="menuArea">
+        <a href="/" class="logo"><h1>Priki</h1></a>
+        <a href="/references" class="menu">Références</a></div>
     <div id="connexion" class="hidden sm:flex sm:items-center sm:ml-6">
     @if(Auth::check())
 
@@ -66,7 +68,7 @@
 
     </div>
 </div>
-@include('header')
+
 
 
 @yield('content')

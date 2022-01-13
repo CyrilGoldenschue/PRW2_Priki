@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ReferenceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +20,6 @@ Route::get('/practice/{id}', [HomeController::class, 'practice']);
 
 
 Route::get('/practices', [HomeController::class, 'index'])->middleware(['auth'])->name('practices');
-
+Route::resource("references", ReferenceController::class)->middleware(['auth']);
 
 require __DIR__.'/auth.php';
