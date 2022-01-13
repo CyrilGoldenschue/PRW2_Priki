@@ -9,6 +9,8 @@ class Practice extends Model
 {
     use HasFactory;
 
+    public $timestamps = false;
+
     protected $fillable = [
         'description',
         'domain_id',
@@ -30,6 +32,11 @@ class Practice extends Model
     public function publication_state()
     {
         return $this->belongsTo(PublicationState::class);
+    }
+
+    public function opinions()
+    {
+        return $this->hasMany(Opinion::class);
     }
 
 }
