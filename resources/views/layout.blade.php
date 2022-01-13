@@ -13,6 +13,7 @@
 
     <script src="{{ mix('js/app.js') }}"></script>
     <script src="{{ mix('js/changeDays.js') }}" defer></script>
+    <script src="{{ mix('js/accordion.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
 
 

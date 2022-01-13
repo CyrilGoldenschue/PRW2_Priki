@@ -40,7 +40,7 @@
                         </th>
                     </tr>
                     @foreach($practice->opinions as $opinion)
-                        <tr>
+                        <tr class="accordion" data-opinion="{{ $opinion->id }}">
                             <td>
                                 {{$opinion->description}}
                             </td>
@@ -54,9 +54,20 @@
                                 {{ count($opinion->comments) }}
                             </td>
                             <td>
-                                {{ $opinion->getUpVote() }} <i class="fas fa-thumbs-up"></i> / {{ $opinion->getDownVote() }} <i class="fas fa-thumbs-down"></i>
+                                {{ $opinion->getUpVote() }} <i class="fas fa-thumbs-up"></i>
+                                / {{ $opinion->getDownVote() }} <i class="fas fa-thumbs-down"></i>
                             </td>
                         </tr>
+                        @foreach($opinion->comments as $comment)
+                            <tr class="panel" data-opinion_comment="{{ $opinion->id }}">
+                                <td>
+                                    {{$comment->pivot->comment}}
+                                </td>
+                                <td>
+                                    <a href="#">{{$comment->fullname}}</a>
+                                </td>
+                            </tr>
+                        @endforeach
                     @endforeach
                 </table>
 
