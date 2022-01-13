@@ -32,6 +32,12 @@
                         <th>
                             Date de création
                         </th>
+                        <th>
+                            Nb commentaire
+                        </th>
+                        <th>
+                            J'aime / J'aime pas
+                        </th>
                     </tr>
                     @foreach($practice->opinions as $opinion)
                         <tr>
@@ -39,10 +45,16 @@
                                 {{$opinion->description}}
                             </td>
                             <td>
-                                {{$opinion->user->fullname}}
+                                <a href="#">{{$opinion->user->fullname}}</a>
                             </td>
                             <td>
                                 {{\Carbon\Carbon::parse($opinion->created_at)->translatedFormat('d F Y')}}
+                            </td>
+                            <td>
+                                {{ count($opinion->comments) }}
+                            </td>
+                            <td>
+                                {{ $opinion->getUpVote() }} <i class="fas fa-thumbs-up"></i> / {{ $opinion->getDownVote() }} <i class="fas fa-thumbs-down"></i>
                             </td>
                         </tr>
                     @endforeach
