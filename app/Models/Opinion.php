@@ -32,4 +32,17 @@ class Opinion extends Model
         return $this->belongsToMany(User::class)->withPivot('comment', 'points');
     }
 
+    public function getDownVote(){
+        $count = $this->comments()->get()->countBy(function($item){
+            return $item->pivot->points;
+        });
+        return array_key_exists(-1,$count->toArray()) ? $count[-1] : 0;
+    }
+    public function getUpVote(){
+        $count = $this->comments()->get()->countBy(function($item){
+            return $item->pivot->points;
+        });
+        return array_key_exists(1,$count->toArray()) ? $count[1] : 0;
+    }
+
 }
