@@ -36,18 +36,20 @@ class ReferenceController extends Controller
      */
     public function store(Request $request)
     {
-        try
-        {
-            $reference = new Reference();
-            $reference->description = $request->description;
-            $reference->url = $request->url;
-            echo($reference);
-            $reference->save();
-            return redirect('references')->with('success',"Insert successfully");
-        }catch(Exception $e){
-            return redirect('references')->with('error',"operation failed");
-        }
+        $reference = new Reference();
+        if( ! $reference->where('url', $request->url)->first()) {
+            try {
 
+                $reference->description = $request->description;
+                $reference->url = $request->url;
+                echo($reference);
+                $reference->save();
+                return redirect('references')->with('success', "Insert successfully");
+            } catch (Exception $e) {
+                return redirect('references')->with('error', "operation failed");
+            }
+        }
+        return redirect('references')->with('error', "Cette url existe déjà");
 
     }
 
