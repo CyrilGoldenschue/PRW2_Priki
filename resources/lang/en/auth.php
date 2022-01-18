@@ -26,5 +26,5 @@ return [
     'ForgetPassword' => 'Forget password ?',
     'Login' => 'Login',
     'Remember' => 'Remember me',
-    'Logout' => 'Logout'
+    'Logout' => 'Logout',
 ];
