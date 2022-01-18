@@ -10,6 +10,7 @@ class Reference extends Model
     use HasFactory;
     public $timestamps=false;
     protected $fillable = [
-        'description'
+        'description',
+        'url',
     ];
 }

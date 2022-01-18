@@ -36,7 +36,19 @@ class ReferenceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        try
+        {
+            $reference = new Reference();
+            $reference->description = $request->description;
+            $reference->url = $request->url;
+            echo($reference);
+            $reference->save();
+            return redirect('references')->with('success',"Insert successfully");
+        }catch(Exception $e){
+            return redirect('references')->with('error',"operation failed");
+        }
+
+
     }
 
     /**
