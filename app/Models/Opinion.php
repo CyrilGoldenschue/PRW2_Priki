@@ -27,6 +27,10 @@ class Opinion extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function references(){
+        return $this->belongsToMany(Reference::class)->withPivot('opinion_id', 'reference_id');
+    }
+
     public function comments()
     {
         return $this->belongsToMany(User::class)->withPivot('comment', 'points');
