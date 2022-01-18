@@ -68,7 +68,7 @@
 
     </div>
 </div>
-
+@include('flash-message')
 
 
 @yield('content')

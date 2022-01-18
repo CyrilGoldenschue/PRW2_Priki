@@ -2,29 +2,23 @@
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+                <x-application-logo class="w-20 h-20 fill-current text-gray-500"/>
             </a>
         </x-slot>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="/reference/store">
+        <form method="POST" action="{{ route('references.store') }}">
         @csrf
 
         <!-- Email Address -->
             <div>
-                <x-label for="description" value="Description" />
+                <x-label for="description" value="Description"/>
 
-                <x-input id="description" class="block mt-1 w-full" type="text" name="description" :value="old('description')" required autofocus minlength="10" />
+                <x-input id="description" class="block mt-1 w-full" type="text" name="description"
+                         :value="old('description')" required autofocus minlength="10"/>
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="url" value="URL" />
+                <x-label for="url" value="URL"/>
 
                 <x-input id="url" class="block mt-1 w-full"
                          type="url"
