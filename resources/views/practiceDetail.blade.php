@@ -62,7 +62,7 @@
                             </td>
                             <td>
                                 @foreach($opinion->references as $reference)
-                                    {{ $reference->description }}
+                                    <a @if($reference->url != null) href="{{ $reference->url }}"  target="_blank" @endif>{{ $reference->description }}</a>
                                 @endforeach
 
                             </td>
