@@ -7,6 +7,7 @@
         <tr>
             <th>Titre</th>
             <th>Lien</th>
+            <th><a class="buttonLink btn btn-primary" href="/references/create">+</a> </th>
         </tr>
         @foreach($references as $reference)
 
