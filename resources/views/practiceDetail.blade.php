@@ -38,6 +38,9 @@
                         <th>
                             J'aime / J'aime pas
                         </th>
+                        <th>
+                            Références
+                        </th>
                     </tr>
                     @foreach($practice->opinions as $opinion)
                         <tr class="accordion" data-opinion="{{ $opinion->id }}">
@@ -56,6 +59,12 @@
                             <td>
                                 {{ $opinion->getUpVote() }} <i class="fas fa-thumbs-up"></i>
                                 / {{ $opinion->getDownVote() }} <i class="fas fa-thumbs-down"></i>
+                            </td>
+                            <td>
+                                @foreach($opinion->references as $reference)
+                                    {{ $reference->description }}
+                                @endforeach
+
                             </td>
                         </tr>
                         @foreach($opinion->comments as $comment)
