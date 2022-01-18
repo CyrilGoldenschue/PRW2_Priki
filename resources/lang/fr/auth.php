@@ -26,6 +26,10 @@ return [
     'Login' => 'Se connecter',
     'Register' => 'S\'inscrire',
     'Remember' => 'Se rappeler de moi',
-    'Logout' => 'Se déconnecter'
+    'Logout' => 'Se déconnecter',
+    'Like' => 'J\'aime',
+    'Nolike' => 'Pas d\'avis',
+    'Dislike' => 'J\'aime pas',
+    'Comment' => 'Commentaire',
 
 ];
