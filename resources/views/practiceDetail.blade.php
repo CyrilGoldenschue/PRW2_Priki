@@ -67,6 +67,11 @@
 
                             </td>
                         </tr>
+                        <tr class="panel" data-opinion_comment="{{ $opinion->id }}">
+                            <td>
+                                <a class="buttonLink btn btn-primary" href="/opinion/{{ $opinion->id }}/create">Comment</a>
+                            </td>
+                        </tr>
                         @foreach($opinion->comments as $comment)
                             <tr class="panel" data-opinion_comment="{{ $opinion->id }}">
                                 <td>
