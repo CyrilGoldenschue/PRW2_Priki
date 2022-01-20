@@ -27,4 +27,8 @@ return [
     'Login' => 'Login',
     'Remember' => 'Remember me',
     'Logout' => 'Logout',
+    'Like' => 'Like',
+    'Nolike' => 'No like',
+    'Dislike' => 'Dislike',
+    'Comment' => 'Comment',
 ];
