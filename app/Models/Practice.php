@@ -39,4 +39,14 @@ class Practice extends Model
         return $this->hasMany(Opinion::class);
     }
 
+    public function publish()
+    {
+        $this->publication_state()->associate(PublicationState::where('slug', 'PUB')->first());
+        $this->save();
+    }
+
+    public function opinionOf (User $user) : ?Opinion
+    {
+        return $this->opinions()->where('user_id',$user->id)->first('description');
+    }
 }
