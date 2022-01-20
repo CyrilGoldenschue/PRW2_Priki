@@ -18,7 +18,7 @@ use App\Http\Controllers\HomeController;
 Route::get('/', [HomeController::class, 'index'])->name("homePage");
 Route::get('/practice/{id}', [HomeController::class, 'practice']);
 Route::get('/opinion/{id}/create', [OpinionController::class, 'create'])->middleware(['auth']);
-Route::get('/opinion/{id}/create', [OpinionController::class, 'store'])->middleware(['auth'])->name('opinion.store');
+Route::get('/opinion/{id}/store', [OpinionController::class, 'store'])->middleware(['auth'])->name('opinion.store');
 
 
 
