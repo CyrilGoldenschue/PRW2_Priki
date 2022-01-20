@@ -28,7 +28,7 @@
         <a href="/" class="logo"><h1>Priki</h1></a>
         <a href="/references" class="menu">Références</a>
         @if(Auth::user()->role->slug == "MOD")
-        <a href="/practices" class="menu">Practiques</a>
+        <a href="/practices" class="menu">Pratiques</a>
         @endif
     </div>
     <div id="connexion" class="hidden sm:flex sm:items-center sm:ml-6">
