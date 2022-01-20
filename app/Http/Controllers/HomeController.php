@@ -17,15 +17,7 @@ class HomeController extends Controller
         return view('practice')->with(["nbDays" => 5, "publicationState" => $publicationState]);
     }
 
-    public function practice($id){
-        Carbon::setLocale(config('app.locale'));
-        $practice = Practice::find($id);
-        if($practice->publication_state->slug == "PUB") {
-            return view('practiceDetail')->with(["practice" => $practice]);
-        }else {
-            return redirect("/");
-        }
-    }
+
 
 
 }
