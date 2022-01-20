@@ -2,6 +2,8 @@
 
 @section('content')
     @include('header')
+
+    <script src="{{ mix('js/changeDays.js') }}" defer></script>
     <h2>Pratiques</h2>
     <p>Mises à jour dans les <input type="number" id="Days" name="days" value="{{$nbDays}}" min="0" max="365"> jours</p>
     <table id="tablePractice" class="table">
