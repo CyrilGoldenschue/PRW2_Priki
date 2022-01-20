@@ -18,6 +18,14 @@
         <div class="description">
             <a><b>Description : </b></a> {{ $practice->description }}
         </div>
+        @if($practice->publication_state->slug == "PRO")
+            <div class="buttonPublish">
+                <a class="btn btn-primary" href="/practice/{{ $practice->id }}/publish">Publié</a>
+            </div>
+
+        @endif
+
+
         @if (count($practice->opinions) != 0)
             <div class="opinions">
                 <h3>Opinions</h3>
