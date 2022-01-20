@@ -12,7 +12,6 @@
     <!-- Styles -->
 
     <script src="{{ mix('js/app.js') }}"></script>
-    <script src="{{ mix('js/changeDays.js') }}" defer></script>
     <script src="{{ mix('js/accordion.js') }}" defer></script>
     <script src="https://kit.fontawesome.com/bf0671b196.js" crossorigin="anonymous"></script>
 
@@ -27,7 +26,11 @@
 <div class="basic_header">
     <div id="menuArea">
         <a href="/" class="logo"><h1>Priki</h1></a>
-        <a href="/references" class="menu">Références</a></div>
+        <a href="/references" class="menu">Références</a>
+        @if(Auth::user()->role->slug == "MOD")
+        <a href="/practices" class="menu">Pratiques</a>
+        @endif
+    </div>
     <div id="connexion" class="hidden sm:flex sm:items-center sm:ml-6">
     @if(Auth::check())
 
