@@ -29,4 +29,15 @@ class PracticeController extends Controller
         $domains = Domain::all();
         return view('practices')->with(["domains" => $domains]);
     }
+
+    public function publish($id, Request $request)
+    {
+        $practice = Practice::find($id);
+        var_dump($practice->publication_state->slug);
+        if ($request->user()->cannot('publish', $practice)) {
+            abort(403);
+        }
+        $practice->publish();
+        return redirect(route('home'))->with('success',"Pratique publiée");
+    }
 }
