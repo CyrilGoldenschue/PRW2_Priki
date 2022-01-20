@@ -18,7 +18,11 @@ class OpinionController extends Controller
         return view('add-comment')->with(["id" => $id]);
     }
 
-    public function store(Request $request, $id){
+    /**
+     * @param $id : id of the opinion on which the user wants to comment
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function store($id){
         $opinion = Opinion::find($id);
         $opinion->comments()->attach(Auth::user(), ['comment' => $_GET['comment'], 'points' => $_GET['points']]);
         return redirect('/practice/'.$opinion->practice->id)->with('success', "Commentaire enregistré");
