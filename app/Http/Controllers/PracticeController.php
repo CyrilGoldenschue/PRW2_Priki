@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Domain;
 use App\Models\Practice;
 use App\Models\PublicationState;
 use Carbon\Carbon;
@@ -25,7 +26,7 @@ class PracticeController extends Controller
             abort(403);
         }
         Carbon::setLocale(config('app.locale'));
-        $practices = Practice::all();
-        return view('practices')->with(["practices" => $practices]);
+        $domains = Domain::all();
+        return view('practices')->with(["domains" => $domains]);
     }
 }
