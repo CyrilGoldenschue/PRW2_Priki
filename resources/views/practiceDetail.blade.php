@@ -18,7 +18,7 @@
         <div class="description">
             <a><b>Description : </b></a> {{ $practice->description }}
         </div>
-        @if($practice->publication_state->slug == "PRO")
+        @if($practice->publication_state->slug == "PRO" AND count($practice->opinions) != 0)
             <div class="buttonPublish">
                 <a class="btn btn-primary" href="/practice/{{ $practice->id }}/publish">Publié</a>
             </div>
