@@ -5,16 +5,14 @@
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500"/>
             </a>
         </x-slot>
-        <form method="POST" action="{{ route('opinion.store') }}">
+        <form method="GET" action="{{ route('opinion.store', $id ) }}">
         @csrf
 
         <!-- Comment -->
             <div>
                 <x-label for="comment" value="{{__('auth.Comment')}}"/>
 
-                <textarea id="comment" class="block mt-1 w-full" name="comment"
-                         :value="old('comment')" required autofocus maxlength="1000">
-                </textarea>
+                <textarea id="comment" class="block mt-1 w-full" name="comment" value="old('comment')" required autofocus maxlength="1000"></textarea>
 
             </div>
 
