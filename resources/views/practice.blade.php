@@ -3,7 +3,7 @@
 @section('content')
 
 
-    @include('list-practices', ['practices' => $publicationState->practices, 'script' => true,])
+    @include('list-practices', ['practices' => $publicationState->practices, 'practicesByDay' => true])
 
 
 

@@ -2,6 +2,6 @@
 
 @section('content')
 
-    @include('list-practices', ['practices' => $practices, 'script' => false])
+    @include('list-practices', ['practices' => $domains, 'practicesByDay' => false])
 
 @endsection
