@@ -27,12 +27,14 @@
     <div id="menuArea">
         <a href="/" class="logo"><h1>Priki</h1></a>
         <a href="/references" class="menu">Références</a>
-        @if(Auth::user()->role->slug == "MOD")
-        <a href="/practices" class="menu">Pratiques</a>
+        @if(Auth::check())
+            @if(Auth::user()->role->slug == "MOD")
+                <a href="/practices" class="menu">Pratiques</a>
+            @endif
         @endif
     </div>
     <div id="connexion" class="hidden sm:flex sm:items-center sm:ml-6">
-    @if(Auth::check())
+        @if(Auth::check())
 
 
             <x-dropdown align="right" width="48">
@@ -64,10 +66,11 @@
                     </form>
                 </x-slot>
             </x-dropdown>
-    @else
-        <a class="buttonLink btn btn-primary" href="/practices">{{ __('auth.Login') }}</a> <a class="buttonLink btn btn-primary" href="/register">{{ __('auth.Register') }}</a>
+        @else
+            <a class="buttonLink btn btn-primary" href="/practices">{{ __('auth.Login') }}</a> <a
+                class="buttonLink btn btn-primary" href="/register">{{ __('auth.Register') }}</a>
 
-    @endif
+        @endif
 
     </div>
 </div>
