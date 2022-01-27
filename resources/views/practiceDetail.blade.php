@@ -8,7 +8,7 @@
 
         <div class="domain_autor">
             <h2>{{ $practice->title }} @if(Auth::check()) @if(Auth::user()->role->slug == "MOD" || Auth::user()->fullname == $practice->user->fullname)
-                    <a href="/practice/{{ $practice->id }}/edit"><i class="fas fa-edit"></i></a>@endif @endif</h2>
+                    <a class="icon" href="/practice/{{ $practice->id }}/edit"><i class="fas fa-edit"></i></a>@endif @endif</h2>
         </div>
         <div class="domain_autor">
             <a><b>Domaine : </b> {{ $practice->domain->name }} </a>
