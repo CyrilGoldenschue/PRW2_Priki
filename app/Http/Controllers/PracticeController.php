@@ -33,11 +33,19 @@ class PracticeController extends Controller
     public function publish($id, Request $request)
     {
         $practice = Practice::find($id);
-        var_dump($practice->publication_state->slug);
         if ($request->user()->cannot('publish', $practice)) {
             abort(403);
         }
         $practice->publish();
         return redirect(route('home'))->with('success',"Pratique publiée");
+    }
+
+    public function edit($id){
+        $practice = Practice::find($id);
+        return view('edit-practice')->with(["practice" => $practice]);
+    }
+
+    public function update(Request $request){
+
     }
 }
