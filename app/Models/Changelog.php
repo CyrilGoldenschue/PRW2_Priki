@@ -16,8 +16,8 @@ class Changelog extends Model
         'previously',
     ];
 
-
-
-
-
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
