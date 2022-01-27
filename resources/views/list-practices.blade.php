@@ -28,6 +28,7 @@
 
     <table @if($practicesByDay) id="tablePractice" @endif class="table">
         <tr>
+            <th>Titre</th>
             <th>Description</th>
             @if($practicesByDay)
                 <th class="Domain">Domaine</th> @endif
@@ -41,6 +42,9 @@
 
                 <tr onclick="document.location = '/practice/{{$practice->id}}'" @if($practicesByDay) class="Practice"
                     data-date="{{$practice->updated_at}}" data-domain="{{ $practice->domain->name }}" @endif>
+                    <td>
+                        {{ $practice->title }}
+                    </td>
                     <td>
                         {{ $practice->description }}
                     </td>
@@ -65,6 +69,9 @@
                     <tr onclick="document.location = '/practice/{{$practice->id}}'"
                         @if($practicesByDay) class="Practice"
                         data-date="{{$practice->updated_at}}" data-domain="{{ $practice->domain->name }}" @endif>
+                        <td>
+                            {{ $practice->title }}
+                        </td>
                         <td>
                             {{ $practice->description }}
                         </td>
