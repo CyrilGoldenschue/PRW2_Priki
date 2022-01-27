@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Changelog;
 use App\Models\Domain;
 use App\Models\Practice;
 use App\Models\PublicationState;
@@ -51,8 +52,17 @@ class PracticeController extends Controller
     public function update(){
         if(Practice::where('title', '=', $_POST['title'])->count() == 0){
             $practice = Practice::find($_POST['practice_id']);
+
+            Changelog::create([
+                'user_id' => Auth::user()->id,
+                'practice_id' => $practice->id,
+                'reason' => $_POST['reason'],
+                'previously' => $practice->title
+            ]);
+
             $practice->title = $_POST['title'];
             $practice->save();
+
             return redirect("/practice/".$practice->id);
         }else{
             return redirect("/practice/".$_POST['practice_id']."/edit");
