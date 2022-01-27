@@ -5,7 +5,9 @@
     <h2>Pratique</h2>
 
     <div class="container">
-
+        <div class="domain_autor">
+            <h2>{{ $practice->title }} <a href="/practice/{{ $practice->id }}/edit"><i class="fas fa-edit"></i></a></h2>
+        </div>
         <div class="domain_autor">
             <a><b>Domaine : </b> {{ $practice->domain->name }} </a>
             <a><b>Auteur : </b>{{ $practice->user->fullname }}</a>
@@ -70,14 +72,16 @@
                             </td>
                             <td>
                                 @foreach($opinion->references as $reference)
-                                    <a @if($reference->url != null) href="{{ $reference->url }}"  target="_blank" @endif>{{ $reference->description }}</a>
+                                    <a @if($reference->url != null) href="{{ $reference->url }}"
+                                       target="_blank" @endif>{{ $reference->description }}</a>
                                 @endforeach
 
                             </td>
                         </tr>
                         <tr class="panel" data-opinion_comment="{{ $opinion->id }}">
                             <td>
-                                <a class="buttonLink btn btn-primary" href="/opinion/{{ $opinion->id }}/create">Comment</a>
+                                <a class="buttonLink btn btn-primary"
+                                   href="/opinion/{{ $opinion->id }}/create">Comment</a>
                             </td>
                         </tr>
                         @foreach($opinion->comments as $comment)
