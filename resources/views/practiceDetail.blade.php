@@ -5,8 +5,9 @@
     <h2>Pratique</h2>
 
     <div class="container">
+
         <div class="domain_autor">
-            <h2>{{ $practice->title }} <a href="/practice/{{ $practice->id }}/edit"><i class="fas fa-edit"></i></a></h2>
+            <h2>{{ $practice->title }} @if(Auth::check()) @if(Auth::user()->role->slug == "MOD" || Auth::user()->fullname == $practice->user->fullname)<a href="/practice/{{ $practice->id }}/edit"><i class="fas fa-edit"></i></a>@endif @endif</h2>
         </div>
         <div class="domain_autor">
             <a><b>Domaine : </b> {{ $practice->domain->name }} </a>
