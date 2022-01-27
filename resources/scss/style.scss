@@ -1,0 +1,132 @@
+@import '~bootstrap';
+
+
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 15px;
+}
+
+.basic_header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#connexion {
+    justify-content: right;
+    text-align: right;
+}
+
+.buttonLink {
+    margin-right: 20px;
+}
+
+.buttonPublish {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+h1 {
+    color: black;
+    font-weight: bold;
+}
+
+.Practice {
+    display: none;
+}
+
+#tablePractice {
+    display: none;
+}
+
+#noPractice {
+    font-size: 24px;
+    color: red;
+    text-decoration: none;
+}
+
+.domain_autor {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.domain_autor > a {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.date {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.date > a {
+    margin-top: 5px;
+}
+
+.description {
+    margin-top: 5px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+#logo {
+    display: flex;
+    flex-direction: row;
+}
+
+.logo {
+    text-decoration: none;
+    font-size: 40px;
+    margin-right: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+.logo:hover {
+     color: #404040;
+ }
+
+.name {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    text-align: right;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.name:hover{
+    color: black;
+}
+
+.menu {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+    margin-right: 15px;
+}
+
+.icon {
+    text-decoration: none;
+    color: black;
+}
+
+.menu:hover {
+    color: gray;
+}
+
+.panel {
+    display: none;
+}
+
+#menuArea {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
