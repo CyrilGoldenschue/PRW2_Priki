@@ -25,6 +25,7 @@
 
 <div class="basic_header">
     <div id="menuArea">
+        Cyril
         <a href="/" class="logo"><h1>Priki</h1></a>
         <a href="/references" class="menu">Références</a>
         @if(Auth::check())
