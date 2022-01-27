@@ -40,6 +40,11 @@ class Practice extends Model
         return $this->hasMany(Opinion::class);
     }
 
+    public function changelogs()
+    {
+        return $this->hasMany(Changelog::class);
+    }
+
     public function publish()
     {
         $this->publication_state()->associate(PublicationState::where('slug', 'PUB')->first());
