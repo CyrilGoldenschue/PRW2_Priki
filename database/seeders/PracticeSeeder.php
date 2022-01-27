@@ -43,7 +43,9 @@ class PracticeSeeder extends Seeder
             "Faites en sorte que le code soit d'abord correct et ensuite rapide. Lorsque vous travaillez sur des problèmes de performance, établissez toujours un profil avant d'apporter des corrections. En général, le goulot d'étranglement n'est pas tout à fait là où vous pensiez qu'il était. Écrire du code obscur parce qu'il est plus rapide ne vaut la peine que si vous l'avez profilé et prouvé que cela en vaut vraiment la peine. Écrire un test qui exerce le code que vous profilez avec un timing autour de lui permet de savoir plus facilement quand vous avez fini, et peut être laissé dans la suite de tests pour prévenir les régressions de performance. (Avec la remarque habituelle que l'ajout de code de chronométrage change toujours les caractéristiques de performance du code, ce qui fait du travail de performance l'une des tâches les plus frustrantes)."
             ]
             as $practice) {
+            $title = explode(' ', $practice);
             Practice::create([
+                'title' => $title[0],
                 'description' => $practice,
                 'domain_id' => Domain::all()->random()->id,
                 'publication_state_id' => PublicationState::all()->random()->id,

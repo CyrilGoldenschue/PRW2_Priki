@@ -12,6 +12,7 @@ class Practice extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'title',
         'description',
         'domain_id',
         'publication_state_id',
