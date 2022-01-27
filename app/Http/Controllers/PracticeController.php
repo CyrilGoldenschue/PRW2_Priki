@@ -63,9 +63,9 @@ class PracticeController extends Controller
             $practice->title = $_POST['title'];
             $practice->save();
 
-            return redirect("/practice/".$practice->id);
+            return redirect("/practice/".$practice->id)->with("success", "Le titre a bien été mis à jour");
         }else{
-            return redirect("/practice/".$_POST['practice_id']."/edit");
+            return redirect("/practice/".$_POST['practice_id']."/edit")->with("error", "Ce titre est déjà utilisé");
         }
     }
 }
