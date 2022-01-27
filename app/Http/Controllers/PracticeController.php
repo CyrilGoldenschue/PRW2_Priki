@@ -40,8 +40,11 @@ class PracticeController extends Controller
         return redirect(route('home'))->with('success',"Pratique publiée");
     }
 
-    public function edit($id){
+    public function edit($id, Request $request){
         $practice = Practice::find($id);
+        if ($request->user()->can('edit', $practice)) {
+            abort(403);
+        }
         return view('edit-practice')->with(["practice" => $practice]);
     }
 
