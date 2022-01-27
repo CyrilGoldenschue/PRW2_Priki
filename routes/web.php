@@ -24,6 +24,8 @@ Route::get('/opinion/{id}/store', [OpinionController::class, 'store'])->middlewa
 
 Route::get('/practices', [PracticeController::class, 'showAll'])->middleware(['auth']);
 Route::get('/practice/{id}/publish', [PracticeController::class, 'publish'])->middleware(['auth']);
+Route::get('/practice/{id}/edit', [PracticeController::class, 'edit'])->middleware(['auth']);
+Route::post('/practice/update', [PracticeController::class, 'update'])->middleware(['auth'])->name('practice.update');
 
 
 Route::get('/', [HomeController::class, 'index']);

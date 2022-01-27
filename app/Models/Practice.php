@@ -12,6 +12,7 @@ class Practice extends Model
     public $timestamps = false;
 
     protected $fillable = [
+        'title',
         'description',
         'domain_id',
         'publication_state_id',
@@ -37,6 +38,11 @@ class Practice extends Model
     public function opinions()
     {
         return $this->hasMany(Opinion::class);
+    }
+
+    public function changelogs()
+    {
+        return $this->hasMany(Changelog::class);
     }
 
     public function publish()

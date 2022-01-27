@@ -7,6 +7,10 @@
     <div class="container">
 
         <div class="domain_autor">
+            <h2>{{ $practice->title }} @if(Auth::check()) @if(Auth::user()->role->slug == "MOD" || Auth::user()->fullname == $practice->user->fullname)
+                    <a class="icon" href="/practice/{{ $practice->id }}/edit"><i class="fas fa-edit"></i></a>@endif @endif</h2>
+        </div>
+        <div class="domain_autor">
             <a><b>Domaine : </b> {{ $practice->domain->name }} </a>
             <a><b>Auteur : </b>{{ $practice->user->fullname }}</a>
         </div>
@@ -24,8 +28,44 @@
             </div>
 
         @endif
+        @if (count($practice->changelogs) != 0)
+            <div class="changelogs">
+                <h3>Changements</h3>
+                <table class="table">
+                    <tr>
+                        <th>
+                            Qui
+                        </th>
+                        <th>
+                            Quand
+                        </th>
+                        <th>
+                            Pourquoi
+                        </th>
+                        <th>
+                            Valeur précédente
+                        </th>
+                    </tr>
+                    @foreach($practice->changelogs as $changelog)
+                        <tr>
+                            <td>
+                                {{ $changelog->user->name }}
+                            </td>
+                            <td>
+                                {{ \Carbon\Carbon::parse($changelog->created_at)->translatedFormat('d F Y') }}
+                            </td>
+                            <td>
+                                {{ $changelog->reason }}
+                            </td>
+                            <td>
+                                {{ $changelog->previously }}
+                            </td>
+                        </tr>
+                    @endforeach
+                </table>
 
-
+            </div>
+        @endif
         @if (count($practice->opinions) != 0)
             <div class="opinions">
                 <h3>Opinions</h3>
@@ -70,14 +110,16 @@
                             </td>
                             <td>
                                 @foreach($opinion->references as $reference)
-                                    <a @if($reference->url != null) href="{{ $reference->url }}"  target="_blank" @endif>{{ $reference->description }}</a>
+                                    <a @if($reference->url != null) href="{{ $reference->url }}"
+                                       target="_blank" @endif>{{ $reference->description }}</a>
                                 @endforeach
 
                             </td>
                         </tr>
                         <tr class="panel" data-opinion_comment="{{ $opinion->id }}">
                             <td>
-                                <a class="buttonLink btn btn-primary" href="/opinion/{{ $opinion->id }}/create">Comment</a>
+                                <a class="buttonLink btn btn-primary"
+                                   href="/opinion/{{ $opinion->id }}/create">Comment</a>
                             </td>
                         </tr>
                         @foreach($opinion->comments as $comment)

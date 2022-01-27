@@ -1,6 +1,7 @@
 @extends('layout')
 
 @section('content')
+
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
@@ -8,30 +9,29 @@
                 <x-application-logo class="w-20 h-20 fill-current text-gray-500"/>
             </a>
         </x-slot>
-        <form method="POST" action="{{ route('references.store') }}">
+        <form method="POST" action="{{ route('practice.update') }}">
         @csrf
-
+            <input type="hidden" value="{{ $practice->id }}" name="practice_id">
         <!-- Email Address -->
             <div>
-                <x-label for="description" value="Description"/>
+                <x-label for="title" value="Titre"/>
 
-                <x-input id="description" class="block mt-1 w-full" type="text" name="description"
-                         :value="old('description')" required autofocus minlength="10"/>
+                <x-input id="title" class="block mt-1 w-full" type="text" name="title"
+                         value="{{ $practice->title }}" required autofocus minlength="3" maxlenght="40"/>
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="url" value="URL"/>
+                <x-label for="reason" value="Raison"/>
 
-                <x-input id="url" class="block mt-1 w-full"
-                         type="url"
-                         pattern="https?://.+"
-                         name="url"/>
+                <x-input id="reason" class="block mt-1 w-full"
+                         type="text"
+                         name="reason"/>
             </div>
 
             <div class="flex items-center justify-end mt-4">
                 <x-button class="ml-3">
-                    Ajouter
+                    Modifier
                 </x-button>
             </div>
         </form>

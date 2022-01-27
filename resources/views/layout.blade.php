@@ -25,7 +25,7 @@
 
 <div class="basic_header">
     <div id="menuArea">
-        <a href="/" class="logo"><h1>Priki</h1></a>
+        <div id="logo"><a href="/" class="logo">Priki</a><a class="name">Cyril</a></div>
         <a href="/references" class="menu">Références</a>
         @if(Auth::check())
             @if(Auth::user()->role->slug == "MOD")

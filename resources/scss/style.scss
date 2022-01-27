@@ -1,13 +1,12 @@
 @import '~bootstrap';
 
 
-
 body {
     font-family: 'Nunito', sans-serif;
     margin: 15px;
 }
 
-.basic_header{
+.basic_header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -18,22 +17,22 @@ body {
     text-align: right;
 }
 
-.buttonLink{
+.buttonLink {
     margin-right: 20px;
 }
 
-.buttonPublish{
+.buttonPublish {
     text-align: center;
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-h1{
+h1 {
     color: black;
     font-weight: bold;
 }
 
-.Practice{
+.Practice {
     display: none;
 }
 
@@ -41,7 +40,7 @@ h1{
     display: none;
 }
 
-#noPractice{
+#noPractice {
     font-size: 24px;
     color: red;
     text-decoration: none;
@@ -76,9 +75,34 @@ h1{
     flex-direction: column;
 }
 
+#logo {
+    display: flex;
+    flex-direction: row;
+}
+
 .logo {
     text-decoration: none;
+    font-size: 40px;
+    margin-right: 5px;
+    font-weight: bold;
+    color: black;
+}
+
+.logo:hover {
+     color: #404040;
+ }
+
+.name {
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    text-align: right;
     margin-right: 20px;
+    font-weight: bold;
+}
+
+.name:hover{
+    color: black;
 }
 
 .menu {
@@ -88,11 +112,16 @@ h1{
     margin-right: 15px;
 }
 
-.menu:hover{
+.icon {
+    text-decoration: none;
+    color: black;
+}
+
+.menu:hover {
     color: gray;
 }
 
-.panel{
+.panel {
     display: none;
 }
 

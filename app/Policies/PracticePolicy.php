@@ -115,4 +115,21 @@ class PracticePolicy
             return false;
         }
     }
+
+    /**
+     * Users that edit a practice MUST be moderators or the owner
+     * @param Practice $practice
+     * @param User $user
+     * @return bool
+     */
+    public function edit(User $user, Practice $practice)
+    {
+        if ($user->role->slug == 'MOD' || $user->fullname == $practice->user->fullname){
+            return false;
+        }else{
+            return true;
+        }
+
+    }
+
 }
